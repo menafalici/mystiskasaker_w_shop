@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ullagulla/FutureFive.git"
+        "url": "git+https://github.com/menafalici/mystiskasaker_w_shop"
     },
     "author": "Menaf",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/ullagulla/FutureFive/issues"
+        "url": "https://github.com/menafalici/mystiskasaker_w_shop/issues"
     },
-    "homepage": "https://github.com/ullagulla/FutureFive#readme",
+    "homepage": "https://github.com/menafalici/mystiskasaker_w_shop",
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
