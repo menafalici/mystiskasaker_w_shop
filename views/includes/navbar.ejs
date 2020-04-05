@@ -1,9 +1,9 @@
 <div id="logo-container">
-    <img class="logo" src="/img/LOGO_EYE.png" alt="hih">
-    <img class="logo" id="logo-pupil" src="/img/LOGO_PUPIL.png" alt="hih">
-    <img class="logo" id="logo-bg" src="/img/LOGO_BG.png" alt="hih">
-    <img class="logo" id="logo-highlight" src="/img/LOGO_HIGHLIGHT.png" alt="hih">
 
+    <a href="/"> <img class="logo" src="/img/LOGO_EYE.png" alt="hih">
+        <img class="logo" id="logo-pupil" src="/img/LOGO_PUPIL.png" alt="hih">
+        <img class="logo" id="logo-bg" src="/img/LOGO_BG.png" alt="hih">
+        <img class="logo" id="logo-highlight" src="/img/LOGO_HIGHLIGHT.png" alt="hih"></a>
 </div>
 
 <ul id="main-navbar">
@@ -11,26 +11,25 @@
         <li class="pl-3 pl-md-4"><a href="/">Hem</a></li>
         <li class="pl-3 pl-md-5"><a href="/products">Produkter</a></li>
         <% if (user) { %>
-        <% if(user.isadmin) { %>
-        <li class="pl-3 pl-md-5"> <a href="/addproducts"> admin: <%= user.firstName %> <%= user.lastName %></a></li>
-        <% } %>
-        <% } %>
+            <% if(user.isadmin) { %>
+                <li class="pl-3 pl-md-5"> <a href="/addproducts"> admin: <%= user.firstName %> <%= user.lastName %></a></li>
+                <% } %>
+                    <% } %>
     </div>
     <div class="nav-icons-wrapper d-flex justify-content-end">
         <li class="pr-3 pr-md-5"><a href="/aboutus">Om oss</a></li>
         <li class="nav-item dropdown pr-3 pr-md-4">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <% if (user){ %>
-                <a class="dropdown-item" href="/profile">Profil</a>
-                <a class="dropdown-item" href="/signout">Logga ut</a>
-                <% } else {%>
-                <a class="dropdown-item" href="/signin">Logga in</a>
-                <a class="dropdown-item" href="/signup">Registrera</a>
-                <% } %>
+                    <a class="dropdown-item" href="/profile">Profil</a>
+                    <a class="dropdown-item" href="/signout">Logga ut</a>
+                    <% } else {%>
+                        <a class="dropdown-item" href="/signin">Logga in</a>
+                        <a class="dropdown-item" href="/signup">Registrera</a>
+                        <% } %>
             </div>
         </li>
 
@@ -39,20 +38,19 @@
         <li class="cart-icon-wrapper">
             <a href="/cart"><i class="fas fa-shopping-cart pr-3 pr-md-5"></i></a>
             <% if (user) { %>
-            <% let total = 0 %>
-            <% user.cart.forEach(element => { %>
-            <%     total += element.quantity  %>
-            <% }) %>
-            <span class="badge-icon"><%= total %></span>
-            <% } %>
+                <% let total = 0 %>
+                    <% user.cart.forEach(element => { %>
+                        <%     total += element.quantity  %>
+                            <% }) %>
+                                <span class="badge-icon"><%= total %></span>
+                                <% } %>
         </li>
     </div>
 </ul>
 
 <!--Modal for wishlist-->
 
-<div class="modal fade pr-0" id="wishlistModal" tabindex="-1" role="dialog" aria-labelledby="wishlistModalLabel"
-    aria-hidden="true">
+<div class="modal fade pr-0" id="wishlistModal" tabindex="-1" role="dialog" aria-labelledby="wishlistModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -63,21 +61,21 @@
             </div>
             <div class="modal-body">
                 <% if (user) { %>
-                <% user.wishlist.forEach(product => { %>
-                <div class="wishlist-content-wrapper d-flex pb-3">
-                    <div class="img-wrapper">
-                        <span class="remove-btn"><a href="/remove/<%=product._id%>"><i
+                    <% user.wishlist.forEach(product => { %>
+                        <div class="wishlist-content-wrapper d-flex pb-3">
+                            <div class="img-wrapper">
+                                <span class="remove-btn"><a href="/remove/<%=product._id%>"><i
                                     class="fas fa-skull-crossbones"></i></a></span>
-                        <img src="<%=product.imageUrl%>" />
-                    </div>
-                    <div class="wishlist-name d-flex justify-content-end w-100">
-                        <%= product.name %>
-                    </div>
-                </div>
-                <% }) %>
-                <% } else { %>
-                Hoppsan, logga in så kan du kika :)
-                <% } %>
+                                <img src="<%=product.imageUrl%>" />
+                            </div>
+                            <div class="wishlist-name d-flex justify-content-end w-100">
+                                <%= product.name %>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                Hoppsan, logga in så kan du kika :)
+                                <% } %>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tack, jag vill gärna shoppa mer
