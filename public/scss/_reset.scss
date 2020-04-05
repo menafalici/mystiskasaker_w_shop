@@ -1,0 +1,67 @@
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+body {
+    .modal {
+        form {
+
+            input {
+
+                &::placeholder {
+                    font-size: 12px;
+
+                    @include tablet() {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .btn {
+                background-color: transparent !important;
+                border-radius: 0;
+                border: 1px solid $primColor;
+                color: $primColor;
+                font-size: 11px;
+                @include tablet(){
+                    font-size: 16px;
+                }
+
+                &:hover {
+                    background-color: $primColor !important;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .space-div {
+        height: 40px;
+
+        @include tablet() {
+            height: 120px;
+        }
+
+        @include large-tablet() {
+            height: 200px;
+        }
+
+        @include desktop() {
+            height: 220px;
+        }
+    }
+}

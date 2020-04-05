@@ -1,0 +1,100 @@
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+$primColor: #e7be50;
+
+body {
+    .container {
+        color: #e7be50;
+
+        .products-container {
+            .product-wrapper {
+                position: relative;
+                height: 260px;
+
+                .product-img-wrapper {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-height: 150px;
+                    width: 150px;
+                    overflow: hidden;
+                    @include tablet() {
+                        width: 200px;
+                    }
+                    @include desktop(){
+                        max-height: 200px;
+                    }
+
+                    img {
+                        height: auto;
+                        width: 150px;
+
+                        &:hover {
+                            cursor: pointer;
+                            animation: flash 0.2s;
+                            animation-iteration-count: 3;
+                        }
+                    }
+                }
+
+                .product-info {
+                    text-align: center;
+
+                    .product-name {
+                        position: relative;
+
+                        a {
+                            color: $primColor;
+                            position: absolute;
+                            right: 25px;
+
+                            &:hover {
+                                filter: brightness(0.4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination-wrapper {
+        margin-bottom: 10px;
+
+        a {
+            color: $primColor;
+
+            &:hover {
+                text-decoration: none;
+                filter: brightness(0.6);
+            }
+        }
+
+        #current-page {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes flash {
+    100% {
+        filter: invert(100%);
+        transform: scale(1.2);
+    }
+}

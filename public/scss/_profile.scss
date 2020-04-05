@@ -1,0 +1,80 @@
+$primColor: #e4b638;
+
+@mixin remove-border-radius(){
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+body {
+    .container {
+        .prod-link {
+            color: $primColor;
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            &:hover {
+                filter: brightness(0.4);
+                text-decoration: none;
+            }
+        }
+
+        .details {
+            border: 1px solid black;
+        }
+        form {
+
+            .firstname {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+            .lastname {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .email {
+                @include remove-border-radius()
+            }
+            .prefix {
+                width: 70px;
+                border-bottom: none;
+                @include remove-border-radius()
+            }
+            .number {
+                border-bottom: none;
+
+                @include remove-border-radius()
+
+            }
+            .address {
+                @include remove-border-radius()
+
+            }
+            .zipcode {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .city {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+            .save-btn {
+                background-color: transparent !important;
+                border-radius: 0;
+                border: 1px solid $primColor;
+                color: $primColor;
+
+                &:hover {
+                    background-color: $primColor !important;
+                    color: black;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,207 @@
+$colorOne: #231f20;
+$colorTwo: #e7be50;
+$colorThree: #e0d2b5;
+
+@mixin tablet {
+    @media (min-width:600px) {
+        @content;
+    }
+
+}
+
+@mixin desktop {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+#logo-container {
+    width: 100%;
+    height: 15vw;
+    position: relative;
+    top: 0;
+    z-index: 3;
+    background-color: #231f20;
+    transition: all 0.5s ease-in-out;
+
+    .logo {
+        transform: translateX(-50%);
+        top: 0;
+        left: 50%;
+        width: 15vw;
+        height: auto;
+        position: absolute;
+        transition: width 0.5s ease-in-out;
+    }
+}
+
+#main-navbar {
+    top: 0vw;
+    left: 0;
+    position: sticky;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    margin: 0;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    padding: 16px 0;
+
+    .nav-icons-wrapper {
+        width: 200px;
+        @include tablet(){
+
+            width: 300px;
+        }
+
+        li {
+            button {
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                display: inline;
+                color: #e7be50;
+                font-size: 16px;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $colorTwo;
+                    filter: brightness(0.4);
+                }
+            }
+        }
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.6em;
+        text-transform: uppercase;
+
+        .nav-link {
+            display: inline-block !important;
+            padding: 0 !important;
+        }
+
+        .dropdown-menu {
+            background-color: black;
+            min-width: 5rem;
+            transform: translate3d(-1rem, 35px, 0) !important;
+
+            a {
+                color: #e7be50;
+
+                &:hover {
+                    background-color: black;
+                    color: #e7be50;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.6em;
+            color: $colorTwo;
+        }
+
+        a {
+            text-decoration: none;
+            color: $colorTwo;
+
+            &:hover {
+                text-decoration: none;
+                color: $colorTwo;
+            }
+
+            filter: brightness(1);
+        }
+
+        a:hover {
+            filter: brightness(0.4);
+        }
+    }
+
+    .cart-icon-wrapper {
+        position: relative;
+
+        .badge-icon {
+            color: $colorTwo;
+            font-size: 14px;
+            border: none;
+            position: absolute;
+            right: 7px;
+
+            @include desktop() {
+                right: 37px;
+            }
+        }
+    }
+}
+
+*:focus {
+    outline-width: 0px !important;
+}
+
+//Modal styling
+
+.modal-content {
+    background-color: #231f20 !important;
+    color: #e7be50;
+
+    .modal-header {
+        border: none;
+
+        button {
+            color: #e7be50;
+        }
+    }
+
+    .modal-body {
+        .wishlist-content-wrapper {
+            position: relative;
+
+            .img-wrapper {
+                width: 70%;
+                max-height: 200px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    max-width: 189px;
+                }
+
+                .remove-btn {
+                    cursor: pointer;
+                    position: absolute;
+                    top: -5px;
+                    left: -15px;
+                    font-weight: bold;
+
+                    a {
+                        color: rgb(156, 9, 9);
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-footer {
+        border: none;
+
+        button {
+            background-color: transparent !important;
+            border-radius: 0;
+            border: 1px solid $colorTwo;
+            color: $colorTwo;
+            font-size: 12px;
+            @include tablet(){
+                font-size: 16px;
+            }
+
+            &:hover {
+                background-color: $colorTwo !important;
+                color: black;
+            }
+        }
+    }
+}

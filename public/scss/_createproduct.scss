@@ -1,0 +1,30 @@
+$colorOne: #231f20;
+$colorTwo: #e7be50;
+$colorThree: #e0d2b5;
+
+.lead {
+    text-transform: capitalize;
+}
+
+.add-product-header {
+    margin-top: 25px;
+    text-align: center;
+    color: $colorTwo;
+}
+
+.img-wrapper {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+#addproducts {
+    .form-group {
+        input {
+            font-size: 16px;
+            padding: 0 0 0 1%;
+        }
+    }
+}

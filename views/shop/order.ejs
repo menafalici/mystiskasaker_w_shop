@@ -1,0 +1,21 @@
+<% user.cart.forEach( product => { %>
+
+    <div><%= product.productId.name %></div>
+    <div><%= product.productId.price %></div>
+    <div><%= product.quantity %></div>
+
+<% }) %>
+
+<button id="btn" type="submit">Buy</button>
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <script>
+    
+    var stripe = Stripe("<%= Stripe_Public_Key %>")
+    document.querySelector("#btn").addEventListener("click", () => {
+        stripe.redirectToCheckout({
+            sessionId: "<%= sessionId %>"
+        })
+    })
+    
+    </script>

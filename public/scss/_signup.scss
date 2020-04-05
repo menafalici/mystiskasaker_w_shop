@@ -1,0 +1,92 @@
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+$colorOne: #231f20;
+$colorTwo: #e7be50;
+$colorThree: #e0d2b5;
+
+#signup-form {
+
+    background-color: #d3d3d3;
+    width: 90%;
+    margin: 5vh auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px 0;
+
+    @include large-tablet() {
+        width: 60%;
+    }
+
+    @include desktop() {
+        width: 40%;
+    }
+
+    input {
+        display: block;
+        width: 70%;
+        margin: 20px auto;
+        border-radius: 5px;
+        height: 50px;
+        font-size: 14px;
+        -webkit-appearance: none;
+        border-width: 0px;
+        border-style: solid;
+        padding: 0 10px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+        margin: 0px auto;
+
+        input {
+            width: 50%;
+        }
+
+        input:nth-child(1) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0.5px solid rgba(0, 0, 0, 0.384);
+        }
+
+        input:nth-child(2) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    .btn {
+        width: 70%;
+        margin: 20px;
+        -webkit-appearance: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 0;
+        color: $colorTwo;
+        padding: 10px 0;
+        background-color: $colorOne;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: $colorTwo;
+        color: $colorOne;
+    }
+}

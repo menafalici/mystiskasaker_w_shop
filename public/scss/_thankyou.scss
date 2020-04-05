@@ -1,0 +1,69 @@
+@mixin small {
+    @media (min-width:400px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width:600px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+
+$colorOne: #231f20;
+$colorTwo: #e7be50;
+$colorThree: #e0d2b5;
+
+
+body {
+    .thankyou-container {
+        height: auto;
+        .row {
+            .col-md-7 {
+                .product-wrapper {
+                    position: relative;
+                    height: 260px;
+    
+                    .product-img-wrapper {
+                        margin-left: auto;
+                        margin-right: auto;
+                        max-height: 200px;
+                        width: 200px;
+                        overflow: hidden;
+    
+                        img {
+                            height: auto;
+                            width: 200px;
+                        }
+                    }
+    
+                    .product-info {
+                        text-transform: uppercase;
+                        text-align: center;
+    
+                        .product-name {
+                            position: relative;
+    
+                            a {
+                                color: $primColor;
+                                position: absolute;
+                                right: 25px;
+    
+                                &:hover {
+                                    filter: brightness(0.4);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

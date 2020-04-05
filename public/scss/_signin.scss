@@ -1,0 +1,112 @@
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+$colorOne: #231f20;
+$colorTwo: #e7be50;
+$colorThree: #e0d2b5;
+
+#signin-form {
+    background-color: #d3d3d3;
+    margin: 5vh auto;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+    padding: 20px 0;
+
+    @include large-tablet() {
+        width: 60%;
+    }
+
+    @include desktop() {
+        width: 40%;
+    }
+
+    h2 {
+        margin: 20px 0;
+        color: $colorOne;
+    }
+
+    input {
+        display: block;
+        width: 70%;
+        margin: 20px auto;
+        border-radius: 5px;
+        height: 50px;
+        font-size: 14px;
+        -webkit-appearance: none;
+        border-width: 0px;
+        border-style: solid;
+        padding: 0 10px;
+    }
+
+    #reset-btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 12px;
+        @include tablet(){
+        font-size: 16px;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .no-registration {
+        color: black;
+        font-size: 12px;
+        @include tablet(){
+        font-size: 16px;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .btn {
+        width: 70%;
+        margin: 20px;
+        -webkit-appearance: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 0;
+        color: $colorTwo;
+        padding: 10px 0;
+        background-color: $colorOne;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: $colorTwo;
+        color: $colorOne;
+    }
+
+    div {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            font-size: 15pt;
+            text-decoration: none;
+        }
+    }
+}

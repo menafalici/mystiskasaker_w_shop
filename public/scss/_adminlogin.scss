@@ -1,0 +1,25 @@
+.dash-logout {
+    color: grey;
+}
+
+h1 {
+    color: black;
+}
+
+.user-btn {
+    background-color: #e7be50;
+    border-radius: 0;
+    border: 1px solid #b39440;
+    color: white
+}
+
+.user-btn:hover {
+    background-color: #b39440;
+    color: black;
+}
+
+
+.admin-login {
+    background-image: url('/img/wolf3.jpg');
+    background-size: cover;
+}
